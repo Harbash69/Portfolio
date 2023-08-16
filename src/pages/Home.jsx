@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import Hero from "../components/Hero/Hero";
@@ -21,6 +21,7 @@ const Home = () => {
       <Resume darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Contact darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Footer darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      
     </>
   );
 };
