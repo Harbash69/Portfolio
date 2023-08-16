@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Suspense } from "react";
 import { BarLoader } from "react-spinners";
 import Home from "./pages/Home";

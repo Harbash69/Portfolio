@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
@@ -26,7 +26,7 @@ const navItems = [
   },
 ];
 
-const NavBar = ({ toggleDarkMode, darkMode }) => {
+const NavBar = ()=> {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 

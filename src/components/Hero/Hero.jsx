@@ -1,12 +1,9 @@
-import React from "react";
 import {
-  AiFillTwitterCircle,
   AiFillGithub,
   AiFillInstagram,
 } from "react-icons/ai";
-import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
-import { FaPlay } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import resumePDF from "../../assets/Oussema-Hedfi.pdf";
 
@@ -21,7 +18,7 @@ const Hero = () => {
               data-aos="fade-up"
               className=" text-5xl font-bold sm:text-[2rem]"
             >
-              Hello, I'm Oussema Hedfi
+              Hello, I`m Oussema Hedfi
             </h2>
             <TypeAnimation
               data-aos="fade-up"
