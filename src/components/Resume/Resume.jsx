@@ -168,16 +168,15 @@ body {
         <div className="horizontal-scroll">
       <div className="horizontal-scroll__block horizontal-scroll__block--purple">
         <div className="background" style={{ backgroundImage: 'url(https://i.postimg.cc/LsMrLFtd/Old-Google-Map.png)' }}></div>
-        <span className="letter">    During my internship at Telcotec, I had the opportunity to gain practical experience in a professional setting. I was exposed to various aspects of Web development and had hands-on experience with technologies like Angular, SpringBoot, and MySQL. 
-                My responsibilities included collaborating with the development team to implement new features, 
-                participating in the design and implementation, ensuring the smooth functioning of applications.
-                This internship allowed me to apply the knowledge I gained during my academic studies and develop a deeper understanding of real-world software development processes. 
-                It also reinforced my skills in teamwork, problem-solving, and working within an Agile development framework.
-                </span>
+        <span className="letter"></span>
       </div>
       <div className="horizontal-scroll__block horizontal-scroll__block--yellow">
         <div className="background" style={{ backgroundImage: 'url(https://www.dialgb.nl/wp-content/uploads/IMG_1741.jpg)' }}></div>
-        <span className="letter">E</span>
+        <span className="letter">During my internship at Telcotec, I had the opportunity to gain practical experience in a professional setting. I was exposed to various aspects of Web development and had hands-on experience with technologies like Angular, SpringBoot, and MySQL. 
+                My responsibilities included collaborating with the development team to implement new features, 
+                participating in the design and implementation, ensuring the smooth functioning of applications.
+                This internship allowed me to apply the knowledge I gained during my academic studies and develop a deeper understanding of real-world software development processes. 
+                It also reinforced my skills in teamwork, problem-solving, and working within an Agile development framework.</span>
       </div>
       <div className="horizontal-scroll__block horizontal-scroll__block--orange">
         <div className="background" style={{ backgroundImage: 'url(https://www.dialgb.nl/wp-content/uploads/IMG_1740.jpg)' }}></div>
