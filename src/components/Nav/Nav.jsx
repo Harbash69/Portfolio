@@ -28,7 +28,7 @@ const navItems = [
     name: "contact",
   },
 ];
-const notify = () => toast.info('Call Me 🇹🇳📞+21623461695', {
+const notify = () => toast.info('🇹🇳+21623461695 --------------------📞', {
   position: "top-center",
 autoClose: 5000,
 hideProgressBar: false,
