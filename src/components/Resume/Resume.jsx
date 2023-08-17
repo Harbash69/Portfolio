@@ -1,206 +1,97 @@
-/* eslint-disable no-undef */
-import { useEffect, useState } from 'react';
 
 const Resume = () => {
-  const [curPage, setCurPage] = useState(1);
-  const numOfPages = 5; // Adjust this based on the actual number of pages
-  const animTime = 1000;
-  const pgPrefix = ".skw-page-";
-
-  const pagination = () => {
-    // eslint-disable-next-line no-undef
-    scrolling = true;
-
-    document.querySelector(`${pgPrefix}${curPage}`).classList.remove("inactive");
-    document.querySelector(`${pgPrefix}${curPage}`).classList.add("active");
-    document.querySelector(`${pgPrefix}${curPage - 1}`).classList.add("inactive");
-    document.querySelector(`${pgPrefix}${curPage + 1}`).classList.remove("active");
-
-    setTimeout(() => {
-      
-      scrolling = false;
-    }, animTime);
-  };
-
-  const navigateUp = () => {
-    if (curPage === 1) return;
-    setCurPage(curPage - 1);
-    pagination();
-  };
-
-  const navigateDown = () => {
-    if (curPage === numOfPages) return;
-    setCurPage(curPage + 1);
-    pagination();
-  };
-
-  useEffect(() => {
-    const handleMouseWheel = (e) => {
-      if (scrolling) return;
-      if (e.deltaY < 0) {
-        navigateUp();
-      } else {
-        navigateDown();
-      }
-    };
-
-    const handleKeyDown = (e) => {
-      if (scrolling) return;
-      if (e.keyCode === 38) {
-        navigateUp();
-      } else if (e.keyCode === 40) {
-        navigateDown();
-      }
-    };
-
-    let scrolling = false;
-
-    document.addEventListener("mousewheel", handleMouseWheel);
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("mousewheel", handleMouseWheel);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [curPage]);
-
   return (
-    <div className="skw-pages">
-      <style>
-        {`
-          ::-webkit-scrollbar {
-  width: 1px;
-  height: 1px;
-}
-
-::-webkit-scrollbar-button {
-  width: 1px;
-  height: 1px;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-html {
-  background-color:transparent;
-  font-size: 16px;
-}
-
-body {
-    background-color:transparent;
-  overflow: hidden;
-  font-size: 1em;
-}
-
-.horizontal-scroll {
-  width: 100vh;
-  height: 100vw;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 30px;
-  transform-origin: right top;
-  transform: rotate(-90deg) translate3d(0, -100vh, 0);
-}
-.horizontal-scroll > * {
-  transform-origin: left top;
-  transform: rotate(90deg) translate3d(0, calc(-100vh + 60px), 0);
-}
-.horizontal-scroll__block {
-  width: calc(100vh - 60px);
-  height: calc(100vh - 60px);
-  background: #FDFFFC;
-  position: relative;
-}
-.horizontal-scroll__block:not(:first-child) {
-  margin-top: 30px;
-}
-.horizontal-scroll__block .background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: no-repeat center center/cover;
-  opacity: 0.8;
-  background-blend-mode: luminosity;
-}
-.horizontal-scroll__block .letter {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  right: auto;
-  bottom: auto;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  font-weight: normal;
-  font-size: 1.5em;
-  font-family: "Playfair Display", serif;
-  color: black;
-}
-.letter {
-  width : 90%
-}
-.horizontal-scroll__block--purple .background {
-
-}
-.horizontal-scroll__block--yellow .background {
-  background-color: #ECC30B;
-}
-.horizontal-scroll__block--orange .background {
-  background-color: #F37748;
-}
-.horizontal-scroll__block--blue .background {
-  background-color: #4D9DE0;
-}
-.horizontal-scroll__block--green .background {
-  background-color: #00BD9D;
-}
-.horizontal-scroll__block--pink .background {
-  background-color: #FB9F89;
-}
-        `}
-      </style>
-      <div className={`skw-page skw-page-${curPage} active`}>
-        
-        <div className="horizontal-scroll">
-      <div className="horizontal-scroll__block horizontal-scroll__block--purple">
-        <div className="background" style={{ backgroundImage: 'url(https://i.postimg.cc/LsMrLFtd/Old-Google-Map.png)' }}></div>
-        <span className="letter"></span>
+    <div id="resume" className=" container m-auto   mt-16">
+      {/* heading */}
+      <div data-aos="fade-up" className="relative mb-5">
+        <h3 className=" text-3xl font-black text-gray-400 sm:text-2xl">
+          Resume
+        </h3>
+        <span className="h-[1.1px] right-0 absolute w-[92%] bg-gray-300 block"></span>
       </div>
-      <div className="horizontal-scroll__block horizontal-scroll__block--yellow">
-        <div className="background" style={{ backgroundImage: 'url(https://www.dialgb.nl/wp-content/uploads/IMG_1741.jpg)' }}></div>
-        <span className="letter">During my internship at Telcotec, I had the opportunity to gain practical experience in a professional setting. I was exposed to various aspects of Web development and had hands-on experience with technologies like Angular, SpringBoot, and MySQL. 
+      <div data-aos="fade-up" className="left flex-1 w-full">
+        <p className=" text-gray-700 font-medium w-[100%]">
+          Here are my experiences and qualifications.
+        </p>
+      </div>
+      {/* card*/}
+      <div className="card-wrapper w-[90%] sm:w-full mt-5 flex md:flex-col sm:gap-5 mx-auto ">
+        <div className="left flex-1 flex items-center justify-center">
+          <fieldset
+            data-aos="zoom-in"
+            className=" w-[80%] p-5 py-12 sm:py-8 sm:w-full sm:p-2"
+          >
+            <legend className=" w-auto ml-[50%] translate-x-[-50%] border-2 border-gray-200 rounded-3xl py-1 px-8 font-semibold text-xl text-yellow-500">
+              Experience
+            </legend>
+            <div className=" relative">
+              {/* design */}
+              <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
+                <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+                <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
+                <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+              </div>
+              {/* design */}
+              <div className=" flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
+                <h1 className="text-[1.4rem] font-semibold sm:text-xl">
+                 Intern Web Developer
+                </h1>
+                <span className=" text-[.9rem] font-semibold text-gray-500 sm:text-base">
+                  Telcotec, Tunis
+                </span>
+                <span className=" text-[.9rem] font-semibold text-yellow-500 sm:text-base">
+                  June 2022 
+                </span>
+                <p className=" text-[.9rem] text-justify break-words text-gray-500">
+                During my internship at Telcotec, 
+                I had the opportunity to gain practical experience in a professional setting. 
+                I was exposed to various aspects of Web development and had hands-on experience with technologies like Angular, SpringBoot, and MySQL. 
                 My responsibilities included collaborating with the development team to implement new features, 
                 participating in the design and implementation, ensuring the smooth functioning of applications.
                 This internship allowed me to apply the knowledge I gained during my academic studies and develop a deeper understanding of real-world software development processes. 
-                It also reinforced my skills in teamwork, problem-solving, and working within an Agile development framework.</span>
+                It also reinforced my skills in teamwork, problem-solving, and working within an Agile development framework.
+                </p>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div className="right flex-1 flex items-center justify-center">
+          <fieldset
+            data-aos="zoom-in"
+            className=" w-[80%] p-5 py-12 sm:py-8 sm:w-full sm:p-2"
+          >
+            <legend className=" w-auto ml-[50%] translate-x-[-50%] border-2 border-gray-200 rounded-3xl py-1 px-8 font-semibold text-xl text-yellow-500">
+              Education
+            </legend>
+            <div className=" relative">
+              {/* design */}
+              <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
+                <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+                <div className="line w-[230px] bg-gray-300 h-[2px] sm:w-[250px]"></div>
+                <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
+              </div>
+              {/* design */}
+              <div className=" flex flex-col gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
+                <h1 className="text-[1.4rem] font-semibold sm:text-xl">
+                  Bachelor of Computer Science
+                </h1>
+                <span className=" text-[.9rem] font-semibold text-gray-500 sm:text-base">
+                  Faculty of Sciences Of Tunisia
+                </span>
+                <span className=" text-[.9rem] font-semibold text-yellow-500 sm:text-base">
+                  Sep 2019 - June 2023
+                </span>
+                <p className=" text-[.9rem] text-justify text-gray-500">
+                During my Computer Science degree, I`ve gained expertise in 
+                Java, Python, and JavaScript, along with a solid grasp of data structures and algorithms. My proficiency extends to web development using HTML, CSS, React, and Angular, and I`ve cultivated skills in database management and SQL querying. I`m well-versed in software development lifecycle, OOP principles, and Git. I`ve also mastered command prompts, npm commands, and continually develop through hands-on projects.
+                </p>
+              </div>
+            </div>
+          </fieldset>
+        </div>
       </div>
-      <div className="horizontal-scroll__block horizontal-scroll__block--orange">
-        <div className="background" style={{ backgroundImage: 'url(https://www.dialgb.nl/wp-content/uploads/IMG_1740.jpg)' }}></div>
-        <span className="letter">I</span>
-      </div>
-      <div className="horizontal-scroll__block horizontal-scroll__block--blue">
-        <div className="background" style={{ backgroundImage: 'url(https://www.dialgb.nl/wp-content/uploads/IMG_1745.jpg)' }}></div>
-        <span className="letter">O</span>
-      </div>
-      <div className="horizontal-scroll__block horizontal-scroll__block--green">
-        <div className="background" style={{ backgroundImage: 'url(https://www.dialgb.nl/wp-content/uploads/IMG_1747.jpg)' }}></div>
-        <span className="letter">U</span>
-      </div>
-      <div className="horizontal-scroll__block horizontal-scroll__block--pink">
-        <div className="background" style={{ backgroundImage: 'url(https://www.dialgb.nl/wp-content/uploads/IMG_1746.jpg)' }}></div>
-        <span className="letter">!</span>
-      </div>
-    </div>
-
-
-      </div>
-
     </div>
   );
-}
+};
 
 export default Resume;
