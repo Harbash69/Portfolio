@@ -21,7 +21,6 @@ const Home = () => {
       <Resume darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Contact darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Footer darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      
     </>
   );
 };

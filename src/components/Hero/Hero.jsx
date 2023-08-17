@@ -6,8 +6,18 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
 import resumePDF from "../../assets/Oussema-Hedfi.pdf";
-
-
+  import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+const notify = () => toast.info('Call Me 🇹🇳📞+21623461695', {
+  position: "top-center",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "colored",
+});
 const Hero = () => {
   return (
     <div id="home" className={` bg-gradient-to-r from-green-200 to-blue-200 `}>
@@ -42,12 +52,21 @@ const Hero = () => {
             </p>
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
-            <a
-              href=""
-              className=" bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold  hover:text-yellow-500"
-            >
-              <span> Hire Me</span>
-            </a>
+                    <div>
+        <button onClick={notify}>Hire Me</button>
+        <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        />
+      </div>
             <a
               href={resumePDF}
               className="flex items-center gap-2 border- text-[1rem] bg-white border-black px-7 py-2 sm:px-6 rounded-lg font-bold  hover:text-yellow-500"
