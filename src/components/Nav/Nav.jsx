@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
-  import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
 
 const navItems = [
   {
@@ -28,16 +25,6 @@ const navItems = [
     name: "contact",
   },
 ];
-const notify = () => toast.info('🇹🇳+21623461695 --------------------📞', {
-  position: "top-center",
-autoClose: 5000,
-hideProgressBar: false,
-closeOnClick: true,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-theme: "colored",
-});
 
 const NavBar = ()=> {
   const [isOpen, setIsOpen] = useState(false);
@@ -118,21 +105,12 @@ const NavBar = ()=> {
                 </a>
               </li>
             ))}
-                    <div>
-        <button onClick={notify}>Hire Me</button>
-        <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-        />
-      </div>
+            <a
+              href="+21623461695"
+              className="bg-black text-[1rem] text-white px-8 py-2 rounded-lg font-bold hover:text-yellow-400 md:m-5 md:block md:mx-auto md:w-fit lg:px-3"
+            >
+              HIRE ME
+            </a>
           </ul>
         </div>
       </nav>

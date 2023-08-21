@@ -4,6 +4,7 @@ import { BarLoader } from "react-spinners";
 import Home from "./pages/Home";
 
 const App = () => {
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

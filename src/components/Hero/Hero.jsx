@@ -8,7 +8,9 @@ import { TypeAnimation } from "react-type-animation";
 import resumePDF from "../../assets/Oussema-Hedfi.pdf";
   import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-const notify = () => toast.info('Call Me 🇹🇳📞+21623461695', {
+  const notify1 = () => toast.info('Thank you, your donwload ', {});
+
+const notify = () => toast.info('Call Me 🇹🇳 +21623461695', {
   position: "top-center",
 autoClose: 5000,
 hideProgressBar: false,
@@ -52,6 +54,8 @@ const Hero = () => {
             </p>
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
+                  <p className="flex items-center gap-2 border- text-[1rem] bg-black border-black px-7 py-2 sm:px-6 rounded-lg font-bold text-white  hover:text-violet-500">
+                    
                     <div>
         <button onClick={notify}>Hire Me</button>
         <ToastContainer
@@ -67,13 +71,28 @@ const Hero = () => {
         theme="colored"
         />
       </div>
+      </p>
             <a
               href={resumePDF}
               className="flex items-center gap-2 border- text-[1rem] bg-white border-black px-7 py-2 sm:px-6 rounded-lg font-bold  hover:text-yellow-500"
               download
             >
               <div className="flex items-center gap-1">
-                Resume <FiDownload />
+                                    <div>
+        <button onClick={notify1}>My CV</button>
+        <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        />
+      </div> <FiDownload />
               </div>
             </a>
           </div>

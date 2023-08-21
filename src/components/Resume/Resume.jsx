@@ -42,7 +42,12 @@ const Resume = () => {
                 <span className=" text-[.9rem] font-semibold text-yellow-500 sm:text-base">
                   June 2022 
                 </span>
-                <p className=" text-[.9rem] text-justify break-words text-gray-500">During my internship at Telcotec, I had the opportunity to gain practical experience in a professional setting. I was exposed to various aspects of Web development and had hands-on experience with technologies like Angular, SpringBoot, and MySQL. My responsibilities included collaborating with the development team to implement new features, participating in the design and implementation, ensuring the smooth functioning of applications. This internship allowed me to apply the knowledge I gained during my academic studies and develop a deeper understanding of real-world software development processes. It also reinforced my skills in teamwork, problem-solving, and working within an Agile development framework.
+                <p className=" text-[.9rem] text-justify break-words text-gray-500">
+                  During my internship at Telcotec, 
+                  I had the opportunity to gain practical experience in a professional setting. 
+                  I was exposed to aspects of Web development and had hands-on experience with technologies like Angular, SpringBoot, and MySQL. 
+                  My responsibilities included collaborating with the development team to implement new features, participating in the design, 
+                  ensuring the smooth functioning of applications. It also reinforced my skills in teamwork, problem-solving, and working within an Agile development framework.
                 </p>
               </div>
               
