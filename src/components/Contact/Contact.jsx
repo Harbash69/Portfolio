@@ -1,7 +1,66 @@
+import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { RiSendPlaneFill } from "react-icons/ri";
 
-const Contact = () => {
+
+const logo = document.getElementById("logo"),
+      images = logo.querySelectorAll("img");
+
+const getActive = () => document.body.dataset.active === "true",
+      setActiveTo = active => document.body.dataset.active = active;
+
+const shift = (image, index, rangeX, rangeY) => {
+  const active = getActive();
+        
+  const translationIntensity = active ? 24 : 4,
+        maxTranslation = translationIntensity * (index + 1),
+        currentTranslation = `${maxTranslation * rangeX}% ${maxTranslation * rangeY}%`;
+  
+  const scale = active ? 1 + (index * 0.4) : 1;
+  
+  image.animate({ 
+    translate: currentTranslation, 
+    scale 
+  }, { duration: 750, fill: "forwards", easing: "ease" });
+}
+
+const shiftAll = (images, rangeX, rangeY) => 
+  images.forEach((image, index) => shift(image, index, rangeX, rangeY));
+
+const shiftLogo = (e, images) => {  
+  const rect = logo.getBoundingClientRect(),
+        radius = 1000;
+  
+  const centerX = rect.left + (rect.width / 2),
+        centerY = rect.top + (rect.height / 2);
+  
+  const rangeX = (e.clientX - centerX) / radius,
+        rangeY = (e.clientY - centerY) / radius;
+  
+  shiftAll(images, rangeX, rangeY);
+}
+
+const resetLogo = () => {
+  setActiveTo(false);
+  shiftAll(images, 0.4, -0.7);
+}
+
+window.onmousemove = e => shiftLogo(e, images);
+
+document.body.onmouseleave = () => {
+  if(!getActive()) resetLogo();
+}
+
+window.onmousedown = e => {
+  setActiveTo(true);
+  shiftLogo(e, images);
+}
+
+window.onmouseup = e => resetLogo();
+
+resetLogo();
+
+function Contact() {
   return (
     <div id="contact" className="container m-auto mt-16">
       {/* heading */}
@@ -76,90 +135,88 @@ const Contact = () => {
           </form>
         </div>
       </div>
-        
       <div id="logo">
-  <img src="https://i.postimg.cc/43GqKG22/2.png" draggable="false" />
-  <img src="https://i.postimg.cc/Fz6w1Jw0/4.png" draggable="false" />
-  <img src="https://i.postimg.cc/WzzQ27Y2/5.png" draggable="false" />
-  <img src="https://i.postimg.cc/jdmrSGrB/8.png" draggable="false" /> 
-  <img src="https://i.postimg.cc/RVjjBK7B/3.png" draggable="false" />
-</div>
+        <img src="https://i.postimg.cc/43GqKG22/2.png" draggable="false" />
+        <img src="https://i.postimg.cc/Fz6w1Jw0/4.png" draggable="false" />
+        <img src="https://i.postimg.cc/WzzQ27Y2/5.png" draggable="false" />
+        <img src="https://i.postimg.cc/jdmrSGrB/8.png" draggable="false" /> 
+        <img src="https://i.postimg.cc/RVjjBK7B/3.png" draggable="false" />
+      </div>
        {/* Your CSS */}
-        <style>
-          {`
-#logo {
-  position: relative;
-  width: 200px;
-  aspect-ratio: 1000 / 556;
-  user-select: none;
-  right:-15%;
-  margin-top:-5%
-}
+              <style>
+                          {`
+                #logo {
+                  position: relative;
+                  width: 200px;
+                  aspect-ratio: 1000 / 556;
+                  user-select: none;
+                  right:-15%;
+                  margin-top:-5%
+                }
 
-#logo > img {
-  width: 100%;
-  position: absolute;
-}
+                #logo > img {
+                  width: 100%;
+                  position: absolute;
+                }
 
-/* -- Links -- */
+                /* -- Links -- */
 
-#links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  z-index: 100;
-  padding: 1rem;
-}
+                #links {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.5rem;
+                  position: absolute;
+                  bottom: 0px;
+                  left: 0px;
+                  z-index: 100;
+                  padding: 1rem;
+                }
 
-.meta-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+                .meta-link {
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                }
 
-.meta-link > :is(span, a) {
-  font-family: "Rubik", sans-serif;
-  font-size: 1.25rem;
-  color: white;
-}
+                .meta-link > :is(span, a) {
+                  font-family: "Rubik", sans-serif;
+                  font-size: 1.25rem;
+                  color: white;
+                }
 
-.meta-link > .label {
-  text-align: right;
-}
+                .meta-link > .label {
+                  text-align: right;
+                }
 
-.meta-link > a {
-  text-decoration: none;
-  outline: none;
-}
+                .meta-link > a {
+                  text-decoration: none;
+                  outline: none;
+                }
 
-.meta-link > a.source {
-  color: rgb(94, 106, 210);
-}
+                .meta-link > a.source {
+                  color: rgb(94, 106, 210);
+                }
 
-.meta-link > a:is(:hover, :focus) > i {
-  color: white;  
-}
+                .meta-link > a:is(:hover, :focus) > i {
+                  color: white;  
+                }
 
-.meta-link > a.youtube {
-  color: rgb(239, 83, 80);
-}
+                .meta-link > a.youtube {
+                  color: rgb(239, 83, 80);
+                }
 
-.meta-link > a.youtube > i {
-  padding-top: 0.2rem; 
-}
+                .meta-link > a.youtube > i {
+                  padding-top: 0.2rem; 
+                }
 
-.meta-link > a > i {
-  height: 1rem;
-  line-height: 1rem;
-}
-          `}
-        </style>    
-    </div>
-    
-  );
+                .meta-link > a > i {
+                  height: 1rem;
+                  line-height: 1rem;
+                }
+                `}
+              </style>
+</div>    
+);
 };
 
 
