@@ -1,29 +1,24 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { RiSendPlaneFill } from "react-icons/ri";
-
-
+const loogo =()=> {}
 const logo = document.getElementById("logo"),
       images = logo.querySelectorAll("img");
 
 const getActive = () => document.body.dataset.active === "true",
       setActiveTo = active => document.body.dataset.active = active;
 
-const shift = (image, index, rangeX, rangeY) => {
-  const active = getActive();
-        
+const shift = (image, index, rangeX, rangeY) => {  
+  const active = getActive();        
   const translationIntensity = active ? 24 : 4,
         maxTranslation = translationIntensity * (index + 1),
-        currentTranslation = `${maxTranslation * rangeX}% ${maxTranslation * rangeY}%`;
-  
-  const scale = active ? 1 + (index * 0.4) : 1;
-  
+        currentTranslation = `${maxTranslation * rangeX}% ${maxTranslation * rangeY}%`;  
+  const scale = active ? 1 + (index * 0.4) : 1;  
   image.animate({ 
     translate: currentTranslation, 
     scale 
   }, { duration: 750, fill: "forwards", easing: "ease" });
 }
-
 const shiftAll = (images, rangeX, rangeY) => 
   images.forEach((image, index) => shift(image, index, rangeX, rangeY));
 
@@ -60,6 +55,8 @@ window.onmouseup = e => resetLogo();
 
 resetLogo();
 
+
+
 function Contact() {
   return (
     <div id="contact" className="container m-auto mt-16">
@@ -77,9 +74,7 @@ function Contact() {
       <div className="card-wrapper w-[90%] sm:w-[100%] mx-auto mt-5 flex items-center justify-center sm:flex-col">
         <div className="left w-[70%] flex-1 flex items-center justify-center sm:flex-col sm:w-full">
           <div className="flex-3 w-1/2 gap-3 flex items-end justify-end  flex-col sm:w-3/4">
-            <div 
-            data-aos="zoom-in"
-            >
+            <div data-aos="zoom-in">
               <h1 className="text-5xl font-bold sm:text-3xl">You Need</h1>
               <h3 className="text-xl sm:text-lg">
                 Beautiful design for your website leave a request
@@ -87,24 +82,18 @@ function Contact() {
             </div>
           </div>
           <div className=" flex p-5 items-center justify-center ">
-            <button
-              
-              data-aos="zoom-in"
-              
-              className= " text-yellow-500 font-extrabold text-3xl p-2 rounded-lg shadow-[0_0_10px_1px_rgba(0,0,0,0.1)] "
-            >
+            <button              
+              data-aos="zoom-in"              
+              className= " text-yellow-500 font-extrabold text-3xl p-2 rounded-lg shadow-[0_0_10px_1px_rgba(0,0,0,0.1)] "            >
               <BsArrowRight className=" md:rotate-90" />
             </button>
           </div>
         </div>
         <div className="right flex-1">
-          <form
-            
-            data-aos="zoom-in"
-            
+          <form            
+            data-aos="zoom-in"            
             className="flex justify-center items-center flex-col gap-5 w-[70%] md:w-[100%] sm:w-[95%] mx-auto"
-            action="mailto:xyz@gmail.com"
-          >
+            action="mailto:xyz@gmail.com">
             <input
               className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
               type="email"
@@ -140,7 +129,7 @@ function Contact() {
         <img src="https://i.postimg.cc/Fz6w1Jw0/4.png" draggable="false" />
         <img src="https://i.postimg.cc/WzzQ27Y2/5.png" draggable="false" />
         <img src="https://i.postimg.cc/jdmrSGrB/8.png" draggable="false" /> 
-        <img src="https://i.postimg.cc/RVjjBK7B/3.png" draggable="false" />
+        <img src="https://i.postimg.cc/vmXpqzRp/3.png" draggable="false" />
       </div>
        {/* Your CSS */}
               <style>
@@ -153,70 +142,17 @@ function Contact() {
                   right:-15%;
                   margin-top:-5%
                 }
-
                 #logo > img {
                   width: 100%;
                   position: absolute;
                 }
-
-                /* -- Links -- */
-
-                #links {
-                  display: flex;
-                  flex-direction: column;
-                  gap: 0.5rem;
-                  position: absolute;
-                  bottom: 0px;
-                  left: 0px;
-                  z-index: 100;
-                  padding: 1rem;
-                }
-
-                .meta-link {
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                }
-
-                .meta-link > :is(span, a) {
-                  font-family: "Rubik", sans-serif;
-                  font-size: 1.25rem;
-                  color: white;
-                }
-
-                .meta-link > .label {
-                  text-align: right;
-                }
-
-                .meta-link > a {
-                  text-decoration: none;
-                  outline: none;
-                }
-
-                .meta-link > a.source {
-                  color: rgb(94, 106, 210);
-                }
-
-                .meta-link > a:is(:hover, :focus) > i {
-                  color: white;  
-                }
-
-                .meta-link > a.youtube {
-                  color: rgb(239, 83, 80);
-                }
-
-                .meta-link > a.youtube > i {
-                  padding-top: 0.2rem; 
-                }
-
-                .meta-link > a > i {
-                  height: 1rem;
-                  line-height: 1rem;
-                }
                 `}
               </style>
-</div>    
+              
+</div>  
+  
 );
+
 };
 
 
