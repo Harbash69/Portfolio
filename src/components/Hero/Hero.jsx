@@ -8,7 +8,7 @@ import { TypeAnimation } from "react-type-animation";
 import resumePDF from "../../assets/Oussema-Hedfi.pdf";
   import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-  const notify1 = () => toast.info('Thank you, your donwload ', {});
+  const notify1 = () => toast.info('Thank you, your donwload is starting  ', {});
 
 const notify = () => toast.info('Call Me 🇹🇳 +21623461695', {
   position: "top-center",
