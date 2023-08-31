@@ -6,7 +6,9 @@ import { RiSendPlaneFill } from "react-icons/ri";
 
 function Contact() {
   return (
+    
     <div id="contact" className="container m-auto mt-16">
+      
       {/* heading */}
       <div 
       // data-aos="fade-up"
@@ -69,6 +71,7 @@ function Contact() {
               <RiSendPlaneFill/>
             </button>
           </form>
+          
         </div>
       </div>
        <div id="logo">
@@ -78,6 +81,8 @@ function Contact() {
         <img src="https://i.postimg.cc/jdmrSGrB/8.png" draggable="false" /> 
         <img src="https://i.postimg.cc/vmXpqzRp/3.png" draggable="false" />
       </div>
+            <iframe title="Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d797.9834833610341!2d10.188194869556689!3d36.86800017117499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2cb32beee11c1%3A0x1813bbb222a2ad8e!2sOussema%20Hedfi!5e0!3m2!1sfr!2stn!4v1693401362126!5m2!1sfr!2stn" style={{'width':'100%','height':'500px','border':'solid'}} ></iframe>
+
        {/* Your CSS */}
               <style>
                           {`
@@ -96,13 +101,11 @@ function Contact() {
                 `}
               </style>
               
+              
 </div>  
   
 );
 
 };
-
-
-  
 
 export default Contact;
