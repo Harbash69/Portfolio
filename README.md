@@ -19,8 +19,8 @@
 
 ## Prerequisites
 
-- npm >=5.5.0
-- node >=9.3.0
+- React >=18.2.0
+- node >=18.10.0
 
 ## Install
 
@@ -39,7 +39,7 @@ npm run dev
 👤 **Oussema Hedfi**
 
 * Github: [@Harbash69](https://github.com/Harbash69)
-* LinkedIn: [@Oussema Hedfi](https://linkedin.com/in/Oussema Hedfi)
+* LinkedIn: [@Oussema Hedfi](https://www.linkedin.com/in/oussema-hedfi-0055081a7/)
 
 ## Show your support
 
