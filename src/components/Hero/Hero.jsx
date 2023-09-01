@@ -58,7 +58,7 @@ const Hero = () => {
                     
                     <div>
         <button onClick={notify}>Hire Me</button>
-        <ToastContainer
+        <a href="tel:+21623461695"><ToastContainer
         position="top-center"
         autoClose={5000}
         hideProgressBar={false}
@@ -69,7 +69,7 @@ const Hero = () => {
         draggable
         pauseOnHover
         theme="colored"
-        />
+        /></a>
       </div>
       </p>
             <a
