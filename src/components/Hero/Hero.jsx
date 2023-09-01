@@ -52,6 +52,7 @@ const Hero = () => {
             >
               
             </p>
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="oussemahedt" data-color="#FFDD00" data-emoji="🍕"  data-font="Cookie" data-text="Buy me a pizza" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
                   <p className="flex items-center gap-2 border- text-[1rem] bg-black border-black px-7 py-2 sm:px-6 rounded-lg font-bold text-white  hover:text-violet-500">
@@ -145,8 +146,10 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };
+
 
 export default Hero;
