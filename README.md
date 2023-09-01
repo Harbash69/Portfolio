@@ -13,7 +13,7 @@
 
 > My Personal website with ReactJS
 
-### 🏠 [Homepage](https://harbash69.github.io/Portfolio](https://github.com/Harbash69/Portfolio)
+### 🏠 [Homepage](https://github.com/Harbash69/Portfolio)
 
 ### ✨ [Demo](https://harbash69.github.io/Portfolio)
 
