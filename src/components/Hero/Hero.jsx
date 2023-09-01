@@ -1,7 +1,4 @@
-import {
-  AiFillGithub,
-  AiFillInstagram,
-} from "react-icons/ai";
+import {AiFillGithub,AiFillInstagram} from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
@@ -10,7 +7,7 @@ import resumePDF from "../../assets/Oussema-Hedfi.pdf";
   import 'react-toastify/dist/ReactToastify.css';
   const notify1 = () => toast.info('Thank you, your donwload is starting  ', {});
 
-const notify = () => toast.info('Call Me 🇹🇳 +21623461695', {
+const notify = () => toast.info('Click to call me', {
   position: "top-center",
 autoClose: 5000,
 hideProgressBar: false,
@@ -58,25 +55,10 @@ const Hero = () => {
                     
                     <div>
         <button onClick={notify}>Hire Me</button>
-        <a href="tel:+21623461695"><ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-        /></a>
+        <a href="tel:+21623461695"> <ToastContainer/></a>
       </div>
       </p>
-            <a
-              href={resumePDF}
-              className="flex items-center gap-2 border- text-[1rem] bg-white border-black px-7 py-2 sm:px-6 rounded-lg font-bold  hover:text-yellow-500"
-              download
-            >
+      
               <div className="flex items-center gap-1">
                                     <div>
         <button onClick={notify1}>My CV</button>
@@ -94,7 +76,7 @@ const Hero = () => {
         />
       </div> <FiDownload />
               </div>
-            </a>
+            
           </div>
           <div className="icons flex mt-5">
             <ul
