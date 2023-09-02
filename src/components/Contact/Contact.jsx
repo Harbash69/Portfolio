@@ -4,7 +4,16 @@ import { RiSendPlaneFill } from "react-icons/ri";
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-
+    const notify = () => toast.info('Message sent ✅ ', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
 function Contact() {
     const form = useRef();
@@ -20,6 +29,8 @@ function Contact() {
           console.log(error.text);
       });
   };
+
+
   return (
     
     <div id="contact" className="container m-auto mt-16">
@@ -61,7 +72,7 @@ function Contact() {
             <input
               className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
               type="email"
-              placeholder="e.g. example@email.com"
+              placeholder="e.g. Oussema@email.com"
               name="from_email"
             />
             <input
@@ -78,7 +89,12 @@ function Contact() {
               name="message"
               
             />
-            <button class="btn-4" role="button" formAction="sendEmail"><span class="text">Send</span></button>
+            <button type="submit" action="sendEmail"
+              className="bg-yellow-500 w-full text-white font-semibold  p-2 rounded-lg flex items-center justify-center space-x-1"
+                onClick={notify}
+            >
+              send
+            </button>
 
           </form>
           
