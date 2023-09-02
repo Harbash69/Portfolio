@@ -3,16 +3,18 @@ import { BsArrowRight } from "react-icons/bs";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+
 
     const notify = () => toast.info('Message sent ✅ ', {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
     });
 
 function Contact() {
@@ -89,12 +91,13 @@ function Contact() {
               name="message"
               
             />
-            <button type="submit" action="sendEmail"
+            <button type="submit" action="sendEmail" onClick={notify}
               className="bg-yellow-500 w-full text-white font-semibold  p-2 rounded-lg flex items-center justify-center space-x-1"
-                onClick={notify}
-            >
+                
+            >             
               send
             </button>
+
 
           </form>
           
