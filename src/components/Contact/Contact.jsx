@@ -1,10 +1,25 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { RiSendPlaneFill } from "react-icons/ri";
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 
 
 function Contact() {
+    const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_lkm4eai', 'template_wledtnd', form.current, 'Wz9bLdgTf_9NzgXDi')
+      .then((result) => {
+          console.log(result.text);
+          console.log("message sent ✅")
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
     
     <div id="contact" className="container m-auto mt-16">
@@ -42,34 +57,29 @@ function Contact() {
           <form            
             data-aos="zoom-in"            
             className="flex justify-center items-center flex-col gap-5 w-[70%] md:w-[100%] sm:w-[95%] mx-auto"
-            action="mailto:xyz@gmail.com">
+            ref={form} onSubmit={sendEmail}>
             <input
               className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
               type="email"
               placeholder="e.g. example@email.com"
-              name=""
+              name="from_email"
             />
             <input
               className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
               type="text"
               placeholder="e.g. Oussema Hedfi"
-              name=""
+              name="from_name"
             />
             <textarea
               className="px-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] p-2 rounded-lg w-full"
               rows="4"
               cols="50"
               placeholder="Write your message"
-              name=""
-              id=""
+              name="message"
+              
             />
-            <button
-              className="bg-yellow-500 w-full text-white font-semibold  p-2 rounded-lg flex items-center justify-center space-x-1"
-              type="submit"
-            >
-              <span>Send</span>
-              <RiSendPlaneFill/>
-            </button>
+            <button class="btn-4" role="button" formAction="sendEmail"><span class="text">Send</span></button>
+
           </form>
           
         </div>
