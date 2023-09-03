@@ -107,7 +107,7 @@ const NavBar = ()=> {
             ))}
             <a href ="https://www.buymeacoffee.com/oussemahedt">
              <button class="custom-btn btn-3">
-              <span>🍕Buy me a pizza </span>
+              <span>🍕Buy me a pizza</span>
               </button>
               </a>
           </ul>

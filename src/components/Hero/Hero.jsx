@@ -10,16 +10,17 @@ import resumePDF from "../../assets/Oussema-Hedfi.pdf";
   import 'react-toastify/dist/ReactToastify.css';
   const notify1 = () => toast.info('Thank you, your donwload is starting  ', {});
 
-const notify = () => toast.info('Call Me 🇹🇳 +21623461695', {
-  position: "top-center",
-autoClose: 5000,
-hideProgressBar: false,
-closeOnClick: true,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-theme: "colored",
-});
+const notify = () => toast.info('Click to call me', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
+                    
 const Hero = () => {
   return (
     <div id="home" className={` bg-gradient-to-r from-green-200 to-blue-200 `}>
@@ -70,7 +71,7 @@ const Hero = () => {
         draggable
         pauseOnHover
         theme="colored"
-        />
+        > </ToastContainer>
       </div>
       </p>
             <a
@@ -81,18 +82,7 @@ const Hero = () => {
               <div className="flex items-center gap-1">
                                     <div>
         <button onClick={notify1}>My CV</button>
-        <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-        />
+
       </div> <FiDownload />
               </div>
             </a>
