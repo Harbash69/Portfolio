@@ -13,7 +13,9 @@ const Home = () => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
   }
   return (
+    
     <>
+    <meta name="google-site-verification" content="kFheYOwA-ybX-DQuuWa5O5RSiFjwSFkfJgI-7BYiG2Y" />
       <NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Skills darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
