@@ -36,7 +36,8 @@ function Contact() {
   return (
     
     <div id="contact" className="container m-auto mt-16">
-      
+          <meta name="google-site-verification" content="kFheYOwA-ybX-DQuuWa5O5RSiFjwSFkfJgI-7BYiG2Y" />
+
       {/* heading */}
       <div 
       // data-aos="fade-up"
