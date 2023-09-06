@@ -4,6 +4,8 @@ import { RiSendPlaneFill } from "react-icons/ri";
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 
     const notify = () => toast.info('Message sent ✅ ', {
@@ -18,6 +20,7 @@ import { ToastContainer, toast } from 'react-toastify';
     });
 
 function Contact() {
+  const onChange =() =>{};
     const form = useRef();
 
   const sendEmail = (e) => {
@@ -91,12 +94,14 @@ function Contact() {
               name="message"
               
             />
+                          <ReCAPTCHA sitekey="6LfgUgMoAAAAAFRiglYe55Gwf6JnkNMkqkYCFvqP" onChange={onChange}/>
             <button type="submit" action="sendEmail" onClick={notify}
               className="bg-yellow-500 w-full text-white font-semibold  p-2 rounded-lg flex items-center justify-center space-x-1"
                 
             >             
               send
             </button>
+
 
 
           </form>
