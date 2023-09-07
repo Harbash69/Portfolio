@@ -3,9 +3,8 @@ import { BsArrowRight } from "react-icons/bs";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import ReCAPTCHA from "react-google-recaptcha";
-
 
 
     const notify = () => toast.info('Message sent ✅ ', {
@@ -94,7 +93,7 @@ function Contact() {
               name="message"
               
             />
-                          <ReCAPTCHA sitekey="6LfgUgMoAAAAAFRiglYe55Gwf6JnkNMkqkYCFvqP" onChange={onChange}/>
+            <ReCAPTCHA sitekey="6Le7YwgoAAAAAP7end1gpO-H34KUw6rPW6G3iLvZ" onChange={onChange} style={{'border':'1px solid purple','width':'79.6%','height':'78px','borderRadius':'4px'}}/>
             <button type="submit" action="sendEmail" onClick={notify}
               className="bg-yellow-500 w-full text-white font-semibold  p-2 rounded-lg flex items-center justify-center space-x-1"
                 
