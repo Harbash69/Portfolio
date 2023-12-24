@@ -10,7 +10,7 @@ import resumePDF from "../../assets/Oussema-Hedfi.pdf";
   import 'react-toastify/dist/ReactToastify.css';
   const notify1 = () => toast.info('Thank you, your donwload is starting  ', {});
 
-const notify = () => toast.info('Click to call me', {
+const notify = () => toast.info('Call me +21623461695', {
                     position: "top-center",
                     autoClose: 5000,
                     hideProgressBar: false,
