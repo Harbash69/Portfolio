@@ -6,6 +6,75 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import ReCAPTCHA from "react-google-recaptcha";
 
+import React, { useRef, useEffect } from 'react';
+
+  const logoRef = useRef(null);
+  const imagesRef = useRef([]);
+
+  const getActive = () => document.body.dataset.active === 'true';
+  const setActiveTo = (active) => (document.body.dataset.active = active);
+
+  const shift = (image, index, rangeX, rangeY) => {
+    const active = getActive();
+
+    const translationIntensity = active ? 24 : 4;
+    const maxTranslation = translationIntensity * (index + 1);
+    const currentTranslation = `${maxTranslation * rangeX}% ${maxTranslation * rangeY}%`;
+
+    const scale = active ? 1 + index * 0.4 : 1;
+
+    image.animate(
+      { translate: currentTranslation, scale },
+      { duration: 750, fill: 'forwards', easing: 'ease' }
+    );
+  };
+
+  const shiftAll = (rangeX, rangeY) => {
+    imagesRef.current.forEach((image, index) => shift(image, index, rangeX, rangeY));
+  };
+
+  const shiftLogo = (e) => {
+    const rect = logoRef.current.getBoundingClientRect();
+    const radius = 1000;
+
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const rangeX = (e.clientX - centerX) / radius;
+    const rangeY = (e.clientY - centerY) / radius;
+
+    shiftAll(rangeX, rangeY);
+  };
+
+  const resetLogo = () => {
+    setActiveTo(false);
+    shiftAll(0.4, -0.7);
+  };
+
+  useEffect(() => {
+    window.addEventListener('mousemove', shiftLogo);
+    document.body.addEventListener('mouseleave', () => {
+      if (!getActive()) resetLogo();
+    });
+    window.addEventListener('mousedown', (e) => {
+      setActiveTo(true);
+      shiftLogo(e);
+    });
+    window.addEventListener('mouseup', resetLogo);
+
+    // Cleanup event listeners on component unmount
+    return () => {
+      window.removeEventListener('mousemove', shiftLogo);
+      document.body.removeEventListener('mouseleave', () => {
+        if (!getActive()) resetLogo();
+      });
+      window.removeEventListener('mousedown', (e) => {
+        setActiveTo(true);
+        shiftLogo(e);
+      });
+      window.removeEventListener('mouseup', resetLogo);
+    };
+  }, []); // Empty dependency array to ensure the effect runs once on mount
 
     const notify = () => toast.info('Message sent ✅ ', {
           position: "top-center",
@@ -107,6 +176,12 @@ function Contact() {
           
         </div>
       </div>
+            <div ref={logoRef}>
+      {/* Assuming your images are in the 'images' array */}
+      {imagesRef.current.map((image, index) => (
+        <img key={index} ref={(el) => (imagesRef.current[index] = el)} src={image.src} alt={`Image ${index}`} />
+      ))}
+    </div>
        <div id="logo">
         <img src="https://i.postimg.cc/43GqKG22/2.png" draggable="false" />
         <img src="https://i.postimg.cc/Fz6w1Jw0/4.png" draggable="false" />
