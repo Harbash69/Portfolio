@@ -6,31 +6,6 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import ReCAPTCHA from "react-google-recaptcha";
 
-const logo = document.getElementById("logo"),
-      images = logo.querySelectorAll("img");
-
-const getActive = () => document.body.dataset.active === "true",
-      setActiveTo = active => document.body.dataset.active = active;
-
-const resetLogo = () => {
-  setActiveTo(false);
-  shiftAll(images, 0.4, -0.7);
-}
-
-window.onmousemove = e => shiftLogo(e, images);
-
-document.body.onmouseleave = () => {
-  if(!getActive()) resetLogo();
-}
-
-window.onmousedown = e => {
-  setActiveTo(true);
-  shiftLogo(e, images);
-}
-
-window.onmouseup = e => resetLogo();
-
-resetLogo();
 
     const notify = () => toast.info('Message sent ✅ ', {
           position: "top-center",
